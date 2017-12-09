@@ -1,32 +1,32 @@
 {
     "execute": {
-        "localhost:81/api/v1/endpoint": {
+        "https://httpbin.org/get": {
             "test1": {
                 "operation": "GET",
-                "given": { "item1": "thing", "item2": 1}, 
-                "expected":{"item1": "returned"}
+                "given": null, 
+                "expected":null
             }, 
             "test2": {
-                "operation": "POST",
-                "given": {"item1": "thing", "item2": 1}, 
-                "expected":{"item1": "returned"}
+                "operation": "GET",
+                "given": null, 
+                "expected":null
             }
         }, 
-        "localhost:81/api/v1/endpoint2": {
+        "https://httpbin.org/get2": {
              "test1": {
-                "operation": "PUT",
-                "given": { "item1": "thing", "item2": 1}, 
-                "expected":{"item1": "returned"}
+                "operation": "GET",
+                "given": null, 
+                "expected":null
             }, 
             "test2": {
-                "operation": "DELETE",
-                "given": {"item1": "thing", "item2": 1}, 
-                "expected":{"item1": "returned"}
+                "operation": "GET",
+                "given": null,
+                "expected":null
             }
         }
     }, 
     "skip": {
-        "localhost:81/api/v1/endpoint3": {
+        "https://httpbin.org/get": {
             "test1": {
                 "operation": "GET",
                 "given": { "item1": "thing", "item2": 1}, 
