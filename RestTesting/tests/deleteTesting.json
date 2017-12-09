@@ -1,37 +1,20 @@
 {
     "execute": {
-        "https://httpbin.org/get": {
-            "test1": {
-                "operation": "GET",
-                "given": null, 
-                "expected":200
-            }, 
-            "test2": {
-                "operation": "POST",
+        "https://httpbin.org/delete": {
+             "test1": {
+                "operation": "PUT",
                 "given": null, 
                 "expected":405
             }, 
+            "test2": {
+                "operation": "DELETE",
+                "given": null,
+                "expected":200
+            }, 
             "test3":{
                 "operation": "OPTIONS", 
                 "given": null, 
                 "expected":200
-            }
-        }, 
-        "https://httpbin.org/get2": {
-             "test1": {
-                "operation": "GET",
-                "given": null, 
-                "expected":404
-            }, 
-            "test2": {
-                "operation": "GET",
-                "given": null,
-                "expected":"failure was expected"
-            }, 
-            "test3":{
-                "operation": "OPTIONS", 
-                "given": null, 
-                "expected":404
             }
         }
     }, 
