@@ -91,21 +91,15 @@ def executeTests(tests):
             print(test, 'hitting endpoint: ', endpoint)
             request = tests[execute][endpoint][test][given]
             opt = tests[execute][endpoint][test][operation]
-            response = operations[opt.upper()](endpoint, request).status_code
+            response = operations[opt.upper()](endpoint, request)
             expectedCode = tests[execute][endpoint][test][expected]
-            success = (successfulFormat + "PASSED") if response == expectedCode else (failureFormat + "FAILED")
+            success = (successfulFormat + "PASSED") if response.status_code == expectedCode else (failureFormat + "FAILED")
             print('\t' + test, success + bformat.CLOSE, response, 'received, ', expectedCode, "expected ")
+            print('\t reason', response.reason)
 
 # Execute script.
 testFiles = retrieveTestFiles()
 run(testFiles)
-
-# Need to move sign in to file
-def signin(user, password):
-    # requests.post(data=)
-    pass
-
-dict['Applied_poison_rating_bonus'](1, 2)
 
 # Constants
 execute = 'execute'
